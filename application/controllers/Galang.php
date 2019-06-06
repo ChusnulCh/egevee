@@ -7,6 +7,7 @@ class Galang extends CI_Controller{
 		parent::__construct();
 		$this->load->model('Galang_model');
 		$this->load->library('form_validation');
+
 	}
 
 	public function index()
@@ -14,25 +15,24 @@ class Galang extends CI_Controller{
 		$data['judul']='Daftar Galang Dana';
 		$data['galang'] = $this->Galang_model->getAllGalang();
 		$this->load->view('templates/header', $data);
-		$this->load->view('galang/index', $data); 
+		$this->load->view('galang/index', $data);
 		$this->load->view('templates/footer');
 	}
 
 	//$this->load->database(); //load di satu method saja
 
-	public function tambah_galang()
+	public function tampil_galang()
 	{
-		$data['judul']='Form Tambah Galang';
-
-		$this->form_validation->set_rules('Judul', 'judul','required');
+		$data['judul']='Form Tampil Galang';
 
 		if ($this->form_validation->run() == FALSE ) {
 			$this->load->view('templates/header', $data);
-			$this->load->view('galang/tambah_galang'); 
+			$x['data']=$this->Galang_model->tampilDataGalang();
+			$this->load->view('galang/tampil_galang',$x);
 			$this->load->view('templates/footer');
 		}else{
-			$this->Galang_model->tambahDataGalang();
-			$this->session->set_flashdata('flash', 'Ditambahkan');
+			$this->Galang_model->tampilDataGalang();
+			$this->session->set_flashdata('flash', 'Ditampilkan');
 			redirect('galang');
 		}
 

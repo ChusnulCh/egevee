@@ -8,12 +8,10 @@ class Galang_model extends CI_model{
 
 	}
 
-	public function tambahDataGalang()
+	public function tampilDataGalang()
 	{
-		$data = [
-		"Judul" => $this->input->post('Judul', true),
-		];
-		
-		$this->db->insert('galang', $data);
+		$hasil = $this->db->query("SELECT * FROM galang_dana");
+
+		return $hasil;
 	}
 }

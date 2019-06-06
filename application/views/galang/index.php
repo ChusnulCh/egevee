@@ -2,7 +2,7 @@
 
 	<div class="row mt-3">
 		<div class="col-md-6">
-			<a href="<?= base_url(); ?>galang/tambah_galang" class="btn-btn-primary">Tambah Data Galang</a>
+			<a href="<?= base_url(); ?>galang/tampil_galang" class="btn-btn-primary">Tampil Data Galang</a>
 		</div>
 	</div>
 
