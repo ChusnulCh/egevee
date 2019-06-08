@@ -1,39 +1,33 @@
-<div class="row">
-    <div class="col-md-12">
-        <!-- Advanced Tables -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-               Data Galang dana
-           </div>
-           <div class="panel-body">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                    
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Judul</th>
-                            <th>Target</th>
-                            <th>Deadline</th>
-                            <th>Kategori</th>
-                            <th>Foto</th>
-                            <th>Deskripsi</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                          <th>No</th>
-                          <th>Judul</th>
-                          <th>Target</th>
-                          <th>Deadline</th>
-                          <th>Kategori</th>
-                          <th>Foto</th>
-                          <th>Deskripsi</th>
-                      </tr>
-
+<!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Data Table Example</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
+                      <th>Start date</th>
+                      <th>Salary</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
+                      <th>Start date</th>
+                      <th>Salary</th>
+                    </tr>
                   </tfoot>
                   <tbody>
-
+                  
                   <?php foreach ($data->result_array as $glng ) :
                     $Id_Galang=$glng['Id_Galang'];
                     $Username=$glng['Username'];
@@ -52,12 +46,28 @@
                   <td><?php echo $Deskripsi; ?></td>?>
                 <?php endforeach;?>
                 </tbody>
-
-            </table>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
 
         </div>
+        <!-- /.container-fluid -->
 
-        <a href="laporan_galangdana_excel.php" class="btn btn-default" target="blank" style="margin-top: 8px;"><i class="fa fa-print"></i> ExportToExcel</a>
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2018</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>        <a href="laporan_galangdana_excel.php" class="btn btn-default" target="blank" style="margin-top: 8px;"><i class="fa fa-print"></i> ExportToExcel</a>
 
     </div>
 </div>
