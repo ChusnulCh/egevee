@@ -14,9 +14,8 @@ class Galang extends CI_Controller{
 	{
 		$data['judul']='Daftar Galang Dana';
 		$data['galang'] = $this->Galang_model->getAllGalang();
-		$this->load->view('templates/header', $data);
+		$this->load->view('galang/overview', $data);
 		$this->load->view('galang/index', $data);
-		$this->load->view('templates/footer');
 	}
 
 	//$this->load->database(); //load di satu method saja
@@ -26,10 +25,9 @@ class Galang extends CI_Controller{
 		$data['judul']='Form Tampil Galang';
 
 		if ($this->form_validation->run() == FALSE ) {
-			$this->load->view('templates/header', $data);
+			$this->load->view('galang/overview', $data);
 			$x['data']=$this->Galang_model->tampilDataGalang();
 			$this->load->view('galang/tampil_galang',$x);
-			$this->load->view('templates/footer');
 		}else{
 			$this->Galang_model->tampilDataGalang();
 			$this->session->set_flashdata('flash', 'Ditampilkan');
