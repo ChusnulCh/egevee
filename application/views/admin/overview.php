@@ -1,5 +1,4 @@
- <!--   <h1>Hello <?php $nama; ?> !</h1> -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -10,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Dashboard</title>
+    <title>ADMIN E-GEVEE</title>
 
     <!-- Bootstrap core CSS-->
     <link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -96,7 +95,7 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="<?php base_url(); ?>galang">
+          <a class="nav-link" href="<?php base_url(); ?>home">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>HOME</span>
           </a>
@@ -114,9 +113,49 @@
         
       </ul>
 
-		<h2>Admin E-Gevee</h2>
-		<p><h3>Selamat datang di Admin E-Gevee</h3></p>
-		<p><h3>Halaman Utama</h3></p>
+          <!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Data Table Example</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
+                      <th>Start date</th>
+                      <th>Salary</th>
+                    </tr>
+                  </thead>
+                  
+                  <?php foreach ($galang as $glng ) : ?>
+
+                  <tbody>
+                <tr>
+                  <td><?php echo $glng->Id_Galang; ?></td>
+                  <td><?php echo $glng->Username; ?></td>
+                  <td><?php echo $glng->Judul; ?></td>
+                  <td><?php echo $glng->Kategori; ?></td>
+                  <td><?php echo $glng->Deadline; ?></td>
+                  <td><?php echo $glng->Cover; ?></td>
+                  <td><?php echo $glng->Deskripsi; ?></td>?>
+                
+                </tbody>
+
+              <?php endforeach; ?>
+
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
         <footer class="sticky-footer">
