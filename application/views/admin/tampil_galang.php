@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $judul; ?></title>
+    <title>ADMIN E-GEVEE</title>
 
     <!-- Bootstrap core CSS-->
     <link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -21,7 +21,7 @@
     <link href="<?php echo base_url('assets/datatables/dataTables.bootstrap4.css') ?>" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<?php echo base_url('css/sb-admin.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/sb-admin.css') ?>" rel="stylesheet">
 
 
 
@@ -90,12 +90,12 @@
 
     </nav>
 
-    <div id="wrapper">
+<div id="wrapper">
 
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="<?php base_url(); ?>home">
+          <a class="nav-link" href="">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>HOME</span>
           </a>
@@ -107,7 +107,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Penggalangan</h6>
-            <a class="dropdown-item" href="<?php base_url(); ?>galang">Data Penggalangan</a>
+            <a class="dropdown-item" href="">Data Penggalangan</a>
           </div>
         </li>
         
@@ -123,44 +123,32 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
+                      <th>No</th>
+                      <th>Nama</th>
+                      <th>Judul</th>
+                      <th>Kategori</th>
+                      <th>Deadline</th>
+                      <th>Foto</th>
+                      <th>Deskripsi</th>
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
                   
-                  <?php foreach ($data->result_array as $glng ) :
-                    $Id_Galang=$glng['Id_Galang'];
-                    $Username=$glng['Username'];
-                    $Judul=$glng['Judul'];
-                    $Kategori=$glng['Kategori'];
-                    $Deadline=$glng['Deadline'];
-                    $Cover=$glng['Cover'];
-                    $Deskripsi=$glng['Deskripsi'];?>
+                  <?php foreach ($galang as $glng ) : ?>
+
+                  <tbody>
                 <tr>
-                  <td><?php echo $Id_Galang; ?></td>
-                  <td><?php echo $Username; ?></td>
-                  <td><?php echo $Judul; ?></td>
-                  <td><?php echo $Kategori; ?></td>
-                  <td><?php echo $Deadline; ?></td>
-                  <td><?php echo $Cover; ?></td>
-                  <td><?php echo $Deskripsi; ?></td>?>
-                <?php endforeach;?>
+                  <td><?php echo $glng->Id_Galangdana; ?></td>
+                  <td><?php echo $glng->Username; ?></td>
+                  <td><?php echo $glng->Judul; ?></td>
+                  <td><?php echo $glng->Kategori; ?></td>
+                  <td><?php echo $glng->Deadline; ?></td>
+                  <td><img src="<?php echo base_url('assets/image/'.$glng->Cover) ?>" width='100'></td>
+                  <td><?php echo $glng->Deskripsi; ?></td>?>
+                
                 </tbody>
+
+              <?php endforeach; ?>
+
                 </table>
               </div>
             </div>
@@ -220,10 +208,10 @@
 <script src="<?php echo base_url('assets/datatables/jquery.dataTables.js') ?>"></script>
 <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.js') ?>"></script>
 <!-- Custom scripts for all pages-->
-<script src="<?php echo base_url('js/sb-admin.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/sb-admin.min.js') ?>"></script>
 <!-- Demo scripts for this page-->
-<script src="<?php echo base_url('js/demo/datatables-demo.js') ?>"></script>
-<script src="<?php echo base_url('js/demo/chart-area-demo.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/demo/datatables-demo.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/demo/chart-area-demo.js') ?>"></script>
 
   </body>
 
