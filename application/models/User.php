@@ -3,9 +3,9 @@
 class User extends CI_Model {
 
 public function cek_user($username, $password) {
-    $this->db->where(“email = ‘$username’ or username = ‘$username’”);
-    $this->db->where(‘password’, md5($password));
-    $query = $this->db->get(‘user’);
+    $this->db->where("email = '$username' or username = '$username'");
+    $this->db->where('password', md5($password));
+    $query = $this->db->get('admin');
     return $query->row_array();
   }
 }

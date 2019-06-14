@@ -1,10 +1,10 @@
 <form action=”<?php echo base_url(‘login/proses-login’) ?>” method=“post”> 
       <div class=“form-group has-feedback”> 
-        <input type=“text” class=“form-control” placeholder=“Username atau Email” name=“username” required id=“username”> 
+        <input type=“text” class=“form-control” placeholder=“Username atau Email” name=“Username” required id=“Username”> 
         <span class=“glyphicon glyphicon-user form-control-feedback”></span> 
       </div> 
       <div class=“form-group has-feedback”> 
-        <input type=“password” class=“form-control” placeholder=“Password” name=“password” required> 
+        <input type=“password” class=“form-control” placeholder=“Password” name=“Password” required> 
         <span class=“glyphicon glyphicon-lock form-control-feedback”></span> 
       </div> 
       <div class=“row”> 
