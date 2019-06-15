@@ -64,7 +64,7 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="<?php base_url('index'); ?>">
+          <a class="nav-link" href="<?php base_url('home'); ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>HOME</span>
           </a>

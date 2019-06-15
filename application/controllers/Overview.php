@@ -10,7 +10,7 @@ class Overview extends CI_Controller {
 	public function index() //fungsi awal
 	{
 
-        $this->load->view('index');
+        $this->load->view('home');
     }
 
     public function SelectDataGalang() //fungsi tampil data

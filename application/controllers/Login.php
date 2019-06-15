@@ -2,10 +2,11 @@
 class Login extends CI_Controller {
     public function __construct(){
         parent::__construct();
-        $this->load->model('User')
+        $this->load->model('User');
     }
+
     public function index() { 
-        $this->load->view('halaman_login'); 
+        $this->load->view('login'); 
     } 
 
     public function proses_login() { 
@@ -14,7 +15,7 @@ class Login extends CI_Controller {
 
         $where = array('Username' => $username,
                        'Password' => $password);
-        $cek = $this->Login->cek_login("user", $where)->num_rows();
+        $cek = $this->User->cek_login("user", $where)->num_rows();
         if($cek > 0){
             $data_session = array(
                 'nama' => $username,
@@ -22,7 +23,7 @@ class Login extends CI_Controller {
             );
             $this->session->set_userdata($data_session);
  
-            redirect(base_url("overview"));
+            redirect(base_url("home"));
  
         }else{
             echo "<script>alert('Username Atau Password Salah')</script>";

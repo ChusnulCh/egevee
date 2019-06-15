@@ -1,11 +1,17 @@
 <?php
 
 class Home extends CI_Controller{
-	public function index($nama = '')//method default
-	{
-		$data['judul'] = 'Halaman Home';
-		$data['nama'] = $nama;
-		$this->load->view('home/index', $data);
+	public function __construct(){
+		parent::__construct();
+		$this->load->library('form_validation');
+	
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
+	}
+ 
+	public function index(){
+		$this->load->view('home');
 	} 
 
 }
