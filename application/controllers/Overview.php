@@ -10,20 +10,20 @@ class Overview extends CI_Controller {
 	public function index() //fungsi awal
 	{
 
-        $this->load->view('admin/index');
+        $this->load->view('index');
     }
 
     public function SelectDataGalang() //fungsi tampil data
     {
         $data["galang"]=$this->Galang_model->tampilDataGalang();
-        $this->load->view('admin/overview',$data);
+        $this->load->view('overview',$data);
 		//$this->load->view("galang/tampil_galang", $data);
 	}
 
 	public function DeleteDataIdGalang($Id_Galangdana) //fungsi hapus
 	{
 	    $this->Galang_model->DeleteIdGalang($Id_Galangdana);
-	    redirect('admin/overview'); //redirect
+	    redirect('overview'); //redirect
 	 
 	}
 }
