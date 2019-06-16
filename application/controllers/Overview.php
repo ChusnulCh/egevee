@@ -5,12 +5,16 @@ class Overview extends CI_Controller {
     {
 		parent::__construct();
 		$this->load->model('Galang_model');
+
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
 	}
 
 	public function index() //fungsi awal
 	{
 
-        $this->load->view('home');
+        $this->load->view('overview');
     }
 
     public function SelectDataGalang() //fungsi tampil data
@@ -20,10 +24,5 @@ class Overview extends CI_Controller {
 		//$this->load->view("galang/tampil_galang", $data);
 	}
 
-	public function DeleteDataIdGalang($Id_Galangdana) //fungsi hapus
-	{
-	    $this->Galang_model->DeleteIdGalang($Id_Galangdana);
-	    redirect('overview'); //redirect
-	 
-	}
+
 }

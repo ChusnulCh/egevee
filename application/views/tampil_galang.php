@@ -63,7 +63,7 @@
 <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="<?php base_url("admin/index"); ?>">
+          <a class="nav-link" href="<?php base_url("home"); ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>HOME</span>
           </a>
@@ -75,7 +75,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Penggalangan</h6>
-            <a class="dropdown-item" href="<?php base_url("admin/overview"); ?>">Data Penggalangan</a>
+            <a class="dropdown-item" href="<?php base_url("Overview"); ?>">Data Penggalangan</a>
           </div>
         </li>
         

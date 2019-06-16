@@ -11,16 +11,13 @@ class Login extends CI_Controller {
 
     public function proses_login() { 
         $user = $this->input->post('Username'); 
-        $pass = $this->input->post('Password'); 
+        $pass = $this->input->post('Password');
 
-        $where = array('Username' => $username,
-                       'Password' => $password);
-        $cek = $this->User->cek_login("user", $where)->num_rows();
+        $where = array('Username' => $username,'Password' => $password);
+
+        $cek = $this->User->cek_loginadmin("user", $where)->num_rows();
         if($cek > 0){
-            $data_session = array(
-                'nama' => $username,
-                'status' => "login"
-            );
+            $data_session = array('nama' => $username,'status' => "login");
             $this->session->set_userdata($data_session);
  
             redirect(base_url("home"));
@@ -32,6 +29,6 @@ class Login extends CI_Controller {
     }
     function logout(){
         $this->session->sess_destroy();
-        redirect(base_url('index'));
+        redirect(base_url('login'));
     }
 }
