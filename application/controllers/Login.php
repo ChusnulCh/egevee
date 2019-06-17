@@ -10,17 +10,17 @@ class Login extends CI_Controller {
     } 
 
     public function proses_login() { 
-        $user = $this->input->post('Username'); 
-        $pass = $this->input->post('Password');
+        $user = $this->input->post('username'); 
+        $pass = $this->input->post('password');
 
-        $where = array('Username' => $username,'Password' => $password);
+        $where = array('Username' => $user,'Password' => $pass);
 
-        $cek = $this->User->cek_loginadmin("user", $where)->num_rows();
+        $cek = $this->User->cek_loginadmin("admin", $where)->num_rows();
         if($cek > 0){
             $data_session = array('nama' => $username,'status' => "login");
             $this->session->set_userdata($data_session);
  
-            redirect(base_url("home"));
+            redirect(base_url("Home"));
  
         }else{
             echo "<script>alert('Username Atau Password Salah')</script>";
@@ -29,6 +29,6 @@ class Login extends CI_Controller {
     }
     function logout(){
         $this->session->sess_destroy();
-        redirect(base_url('login'));
+        redirect(base_url('Login'));
     }
 }

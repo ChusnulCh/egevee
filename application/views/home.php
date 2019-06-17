@@ -76,11 +76,12 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Penggalangan</h6>
-            <a class="dropdown-item" href="<?php base_url('Overview'); ?>">Data Penggalangan</a>
+            <a class="dropdown-item" href="<?php base_url('Overview/SelectDataGalang'); ?>">Data Penggalangan</a>
           </div>
         </li>
         
       </ul>
+      
 		<h2>Admin E-Gevee</h2>
 		<h3>Selamat datang di Admin E-Gevee</h3>
 		<h3>Halaman Utama</h3>

@@ -13,16 +13,8 @@ class Overview extends CI_Controller {
 
 	public function index() //fungsi awal
 	{
-
-        $this->load->view('overview');
-    }
-
-    public function SelectDataGalang() //fungsi tampil data
-    {
-        $data["galang"]=$this->Galang_model->tampilDataGalang();
+		$data['galangdana']=$this->Galang_model->getAllGalang()->result();
         $this->load->view('overview',$data);
-		//$this->load->view("galang/tampil_galang", $data);
-	}
-
+    }
 
 }
